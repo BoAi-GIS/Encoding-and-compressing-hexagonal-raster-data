@@ -177,7 +177,7 @@ namespace Compression
 
         #endregion
 
-        #region IToolControl 成员
+        #region IToolControl Member
 
         public bool OnDrop(esriCmdBarType barType)
         {
