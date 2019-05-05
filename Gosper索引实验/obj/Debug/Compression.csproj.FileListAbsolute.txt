@@ -1,4 +1,0 @@
-D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Gosper索引实验\bin\Debug\Gosper索引实验.dll
-D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Gosper索引实验\bin\Debug\Gosper索引实验.pdb
-D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Gosper索引实验\obj\Debug\Gosper索引实验.dll
-D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Gosper索引实验\obj\Debug\Gosper索引实验.pdb

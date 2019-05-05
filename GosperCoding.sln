@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compression", "Gosper索引实验\Compression.csproj", "{01B52CD6-A2EB-4E19-9751-BAE7704D464B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compression", "GosperCoding\Compression.csproj", "{01B52CD6-A2EB-4E19-9751-BAE7704D464B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
