@@ -7,3 +7,4 @@ D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩
 D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Encoding-and-compressing-hexagonal-raster-data\GosperCoding\bin\Debug\GosperCoding.tlb
 D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Encoding-and-compressing-hexagonal-raster-data\GosperCoding\obj\Debug\GosperCoding.dll
 D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Encoding-and-compressing-hexagonal-raster-data\GosperCoding\obj\Debug\GosperCoding.pdb
+D:\研究生工作学习\隐喻地图方向\文章\[英]Gosper栅格数据压缩\投稿包\TGIS\第二轮\Gosper索引实验\Encoding-and-compressing-hexagonal-raster-data\GosperCoding\obj\Debug\Compression.csprojResolveAssemblyReference.cache

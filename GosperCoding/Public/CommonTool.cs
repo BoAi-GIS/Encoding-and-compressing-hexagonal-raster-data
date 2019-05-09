@@ -29,6 +29,7 @@ namespace Compression
         /// <param name="gdbPath">the GDB file path</param>
         public CommonTool(string gdbPath)
         {
+            //Construct FeatureWorkspace
             workspaceFactory = new FileGDBWorkspaceFactoryClass();
             pWorkspace = workspaceFactory.OpenFromFile(gdbPath, 0);
             pFeaWorkspace = (IFeatureWorkspace)pWorkspace;
@@ -36,24 +37,23 @@ namespace Compression
 
         public IFeatureClass CreateFeatureClassWithoutAttribute(string feaClassName, esriGeometryType enumGometryType)
         {
-            //Basic settings of FeatureClass
             string featureClassName = feaClassName + "Time" + DateTime.Now.ToString("yyyyMMddHHmmss");
-
+            //Basic field settings of FeatureClass
             IFields fields = new FieldsClass();
             IFieldsEdit fieldsEdit = (IFieldsEdit)fields;
 
-            ISpatialReferenceFactory spatialrefFactory = new SpatialReferenceEnvironmentClass();
+            ISpatialReferenceFactory spatialrefFactory = new SpatialReferenceEnvironmentClass();//SpatialReference settings
             ISpatialReference spatialReference = spatialrefFactory.CreateProjectedCoordinateSystem(
                 (int)(esriSRProjCS4Type.esriSRProjCS_Xian1980_GK_CM_111E));
             IGeometryDef geometryDef = new GeometryDefClass();
 
-            IGeometryDefEdit geometryDefEdit = (IGeometryDefEdit)geometryDef;
+            IGeometryDefEdit geometryDefEdit = (IGeometryDefEdit)geometryDef;//Geometry field settings
             geometryDefEdit.GeometryType_2 = enumGometryType;
             geometryDefEdit.GridCount_2 = 1;
             geometryDefEdit.set_GridSize(0, 0);
             geometryDefEdit.SpatialReference_2 = spatialReference;
 
-            IField fieldUserDefined = new FieldClass();
+            IField fieldUserDefined = new FieldClass();//Field creation
             IFieldEdit fieldEdit = (IFieldEdit)fieldUserDefined;
             fieldEdit.Name_2 = "Shape";
             fieldEdit.Type_2 = esriFieldType.esriFieldTypeGeometry;
@@ -62,12 +62,10 @@ namespace Compression
             fieldEdit.Required_2 = true;
 
             fieldsEdit.AddField(fieldUserDefined);
-
+            
+            //Create FeatureClass
             UID CLSID = new UIDClass();
             CLSID.Value = "esriGeodatabase.Feature";
-            
-
-            //Create FeatureClass
             IFeatureClass createdFeatureClass = pFeaWorkspace.CreateFeatureClass(featureClassName, fields, CLSID, null, esriFeatureType.esriFTSimple, "Shape", " ");
 
             return createdFeatureClass;
@@ -75,9 +73,8 @@ namespace Compression
 
         public IFeatureClass OpenFeatureClass(string name)
         {
-            //Open FeatureClass
-            IFeatureClass tempFeaClass = pFeaWorkspace.OpenFeatureClass(name);           
-
+            //Open FeatureClass by Name
+            IFeatureClass tempFeaClass = pFeaWorkspace.OpenFeatureClass(name); 
             return tempFeaClass;
         }
 

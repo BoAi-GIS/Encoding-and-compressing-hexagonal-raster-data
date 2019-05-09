@@ -73,7 +73,7 @@ namespace Compression
 
         private IApplication mApplication;
         private ComboBox lyrSelectorCb;
-        private Dictionary<string, ILayer> dicLayers;
+        private Dictionary<string, ILayer> dicLayers;//Layers dictionary: manage layer names and layer information
         IMap pMap = null;
 
         private static ILayer operateLyr;
@@ -116,6 +116,7 @@ namespace Compression
             }
         }
 
+        //The selected layer change triggers this function
         void lyrSelectorCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             operateLyr = dicLayers[lyrSelectorCb.SelectedItem.ToString()] as IFeatureLayer;
@@ -157,13 +158,17 @@ namespace Compression
             // TODO: Add OperateLayerSelector.OnClick implementation
             if (mApplication != null)
             {
-                IEnumLayer enumLayer = pMap.get_Layers();
-                ILayer layer = null;
+                //Fill in the layer selector drop-down list
+                IEnumLayer enumLayer = pMap.get_Layers();                
                 enumLayer.Reset();
+
+                this.lyrSelectorCb.Items.Clear();//Layer selector initialization
                 dicLayers = new Dictionary<string, ILayer>();
-                this.lyrSelectorCb.Items.Clear();
+                ILayer layer = null;
+
                 while ((layer = enumLayer.Next()) != null)
                 {
+                    //Add layer name information(not add no activated layer)
                     if (!layer.Visible)
                         continue;
                     if (!dicLayers.ContainsKey(layer.Name))

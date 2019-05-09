@@ -65,8 +65,7 @@ namespace Compression
 
         public GosperCodeToolbar()
         {
-            AddItem(typeof(TargetLayerSelector));//Toolbar
-
+            AddItem(typeof(TargetLayerSelector));//Add target layer select tool
             AddItem(typeof(GenerateGosperCurve));//Add Gosper curve generation tool
             AddItem(typeof(LosslessCompression));//Add lossless compression tool
             AddItem(typeof(LossyCompression));//Add lossy compression tool
